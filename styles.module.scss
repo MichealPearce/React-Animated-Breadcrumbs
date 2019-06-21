@@ -42,8 +42,6 @@ $crumb-trans-duration: 250ms;
 			opacity $crumb-trans-duration;
 	}
 
-	&.homeCrumb:after { display: none; }
-
 	& a.activeLink, &:hover a {
 		color: #039BE5;
 		border-color: #039BE5;

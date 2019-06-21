@@ -1,0 +1,75 @@
+@import '../../styles/sassy';
+
+$crumb-trans-duration: 250ms;
+
+.breadcrumbs {
+
+	@include flex(row, flex-start, center);
+	flex: 1; padding: 5px;
+
+	background-color: white;
+	border-radius: 5px;
+
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.23);
+
+	.container {
+		@include flex(row, flex-start, center);
+		width: 100%;
+	}
+
+}
+
+.breadcrumbs .crumb {
+
+	position: relative;
+
+	text-transform: capitalize;
+	font-weight: 500;
+	-webkit-app-region: no-drag;
+	opacity: 1;
+	transition: opacity 0s;
+
+	a {
+		//border-bottom: 2px solid #9E9E9E;
+		color: #9E9E9E;
+		text-decoration: none;
+		position: relative;
+		left: 0px; top: 0px;
+		opacity: 1;
+		transition:
+			color 250ms,
+			left $crumb-trans-duration,
+			opacity $crumb-trans-duration;
+	}
+
+	&.homeCrumb:after { display: none; }
+
+	& a.activeLink, &:hover a {
+		color: #039BE5;
+		border-color: #039BE5;
+	}
+
+	&:not(:last-child):after {
+
+		content: "\f101";
+		padding: 0px 5px;
+		color: #9E9E9E;
+		font-family: "Font Awesome 5 Free";
+		font-weight: 900;
+		font-style: normal;
+		font-variant: normal;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+
+		position: relative;
+		left: 0px; opacity: 1;
+		transition:
+			left $crumb-trans-duration,
+			opacity $crumb-trans-duration;
+
+		animation: swingIn 0.25s;
+		animation-fill-mode: forwards;
+
+	}
+
+}

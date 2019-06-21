@@ -1,0 +1,68 @@
+.breadcrumbs .crumb { //Enter Animations
+
+	&.enter {
+
+		position: absolute;
+		opacity: 0;
+	
+		a {
+			left: -10px;
+			opacity: 0;
+		}
+	
+		&:after {
+			left: -10px;
+			opacity: 0;
+		}
+	
+	}
+
+	&.enterActive a {
+		color: #039BE5;
+	}
+
+	&.enterDone {
+		a {
+			left: 0px;
+			opacity: 1;
+		}
+		&:after {
+			left: 0px;
+			opacity: 1;
+		}
+	}
+
+}
+
+.breadcrumbs .crumb { //Exit Animations
+
+	&.exit {
+		
+		a {
+			left: 0px;
+			opacity: 1;
+		}
+	
+		&:after {
+			left: 0px;
+			opacity: 1;
+		}
+	
+	}
+
+	&.exitActive {
+	
+		a {
+			left: -10px;
+			opacity: 0;
+		}
+	
+		&:after {
+			left: -10px;
+			opacity: 0;
+		}
+	
+	}
+	
+
+}

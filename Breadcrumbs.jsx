@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
-import classNames from 'classnames'
 
 import styles from './styles.module.scss'
 import transitions from './transitions.module.scss'
@@ -58,7 +57,7 @@ export default class Breadcrumbs extends Component {
 		crumbs.forEach(crumb => {
 			link += crumb+'/'
 			crumbEls.push(
-				<NavCrumb
+				<TransCrumb
 					crumb={crumb}
 					delay={transDelay}
 					link={link}

@@ -35,7 +35,7 @@ export default class Breadcrumbs extends Component {
 
 		return crumbs.map((crumb, id) => {
 			link += crumb+'/'
-			transDelay += 50
+			duration += 50
 			return (
 				<CSSTransition
 					key={id}
@@ -63,19 +63,12 @@ export default class Breadcrumbs extends Component {
 			props.className
 		)
 
-		console.log(props)
-
 		return (
-			<div className={elClasses} onClick={this.hideBreadcrumbs} >
-				<div className={styles.search}>
-					<input type="text"/>
-				</div>
-				<div className={styles.crumbs}>
-					<NavCrumb crumb="Home" link="/" />
-					<TransitionGroup className={styles.container} >
-						{this.generateBreadCrumbs(props.path)}
-					</TransitionGroup>
-				</div>
+			<div className={elClasses}>
+				<NavCrumb crumb="Home" link="/" />
+				<TransitionGroup className={styles.container} >
+					{this.generateBreadCrumbs(props.path)}
+				</TransitionGroup>
 			</div>
 		)
 	}

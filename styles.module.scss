@@ -7,12 +7,15 @@ $crumb-trans-duration: 250ms;
 	@include flex(row, flex-start, center);
 	flex: 1; padding: 5px;
 
+	position: relative;
+
 	background-color: white;
 	border-radius: 5px;
 
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.23);
+	overflow: hidden;
 
-	.container {
+	.container, .crumbs{
 		@include flex(row, flex-start, center);
 		width: 100%;
 	}
@@ -30,7 +33,6 @@ $crumb-trans-duration: 250ms;
 	transition: opacity 0s;
 
 	a {
-		//border-bottom: 2px solid #9E9E9E;
 		color: #9E9E9E;
 		text-decoration: none;
 		position: relative;
@@ -47,7 +49,7 @@ $crumb-trans-duration: 250ms;
 		border-color: #039BE5;
 	}
 
-	&:not(:last-child):after {
+	&:after {
 
 		content: "\f101";
 		padding: 0px 5px;
@@ -65,9 +67,11 @@ $crumb-trans-duration: 250ms;
 			left $crumb-trans-duration,
 			opacity $crumb-trans-duration;
 
-		animation: swingIn 0.25s;
-		animation-fill-mode: forwards;
+	}
 
+	&:last-child:after {
+		left: -10px;
+		opacity: 0;
 	}
 
 }

@@ -69,7 +69,7 @@ $crumb-trans-duration: 250ms;
 
 	}
 
-	&:last-child:after {
+	&:last-of-type:after {
 		left: -10px;
 		opacity: 0;
 	}
